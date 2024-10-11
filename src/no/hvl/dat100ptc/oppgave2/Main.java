@@ -7,7 +7,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		// TODO
+		String s = "2017-08-13T08:52:26.000Z";
+		String timeStreng = s.substring(11, 13);
+		int t = Integer.parseInt(timeStreng);
+		System.out.println(t);
 		
 	}
 }

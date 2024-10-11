@@ -8,12 +8,13 @@ public class GPSData {
 	private GPSPoint[] gpspoints;
 	protected int antall = 0;
 
-	public GPSData(int antall) {
-
-		throw new UnsupportedOperationException(TODO.method());
+	public GPSData(int antall) {     // konstruktør 
 		
-		// TODO
-	}
+		 this.gpspoints = new GPSPoint [antall];
+		 this.antall = 0;
+		 
+		
+		}
 
 	public GPSPoint[] getGPSPoints() {
 		return this.gpspoints;
@@ -39,7 +40,8 @@ public class GPSData {
 		
 	}
 
-	public void print() {
+	public void print() {   // begynne på null slutte på i<antall, for-løkke
+		
 
 		throw new UnsupportedOperationException(TODO.method());
 

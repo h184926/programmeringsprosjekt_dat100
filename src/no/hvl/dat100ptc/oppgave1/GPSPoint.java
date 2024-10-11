@@ -4,73 +4,83 @@ import no.hvl.dat100ptc.TODO;
 
 public class GPSPoint {
 
-	// TODO - objektvariable
+	private int time;
+	private double latitude;
+	private double longitude;
+	private double elevation; 
 	
-	public GPSPoint(int time, double latitude, double longitude, double elevation) {
-
-		// TODO - konstruktur
-
-		throw new UnsupportedOperationException(TODO.construtor("GPSPoint"));
+	
+	public GPSPoint(int time, double latitude, double longitude, double elevation) {    //konstruktør lage nye objekt
+		
+		this.time = time;    // this gjør at det blir objektvariabeler
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.elevation = elevation;
+		
+		
+		
+	} 
+    	
+	public int getTime() {   // hente 
+		return time;
 		
 	}
 
-	// TODO - get/set metoder
-	public int getTime() {
-		
-		throw new UnsupportedOperationException(TODO.method());
-		
-	}
-
-	public void setTime(int time) {
+	public void setTime(int time) {  // endre
 				
-		throw new UnsupportedOperationException(TODO.method());
+		this.time = time;
 		
 	}
 
 	public double getLatitude() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return latitude; 
 		
 		
 	}
 
 	public void setLatitude(double latitude) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		this.latitude = latitude;
 		
 	}
 
 	public double getLongitude() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return longitude;
+		
 		
 	}
 
 	public void setLongitude(double longitude) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		this.longitude = longitude;
 		
 	}
 
 	public double getElevation() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return elevation;
+		
 		
 	}
 
 	public void setElevation(double elevation) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		this.elevation = elevation;
+		
 		
 	}
 	
 	public String toString() {
 		
 		String str;
+		// "1 (2.0,3.0) 5.0\n"    tid, latitude, longitude, elevation , \n betyr ny linje, \t betyr tabilator
 		
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO
+		str = "" +  time + "(" + latitude + "," + longitude + ")" + elevation + "\n";       // skriver det ovenfor. 
+		return str;
+		
+		
 		
 	}
 }
