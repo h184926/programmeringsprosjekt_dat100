@@ -41,8 +41,9 @@ public class ShowSpeed extends EasyGraphics {
 		
 		int x = MARGIN,y;
 	
-		// TODO
-		throw new UnsupportedOperationException(TODO.method());
+		double[] speeds = gpscomputer.speeds();
+		double avgspeeds = gpscomputer.averageSpeed(); 
+		
 		
 	}
 }
