@@ -77,7 +77,7 @@ public class GPSPoint {
 		String str;
 		// "1 (2.0,3.0) 5.0\n"    tid, latitude, longitude, elevation , \n betyr ny linje, \t betyr tabilator
 		
-		str = "" +  time + "(" + latitude + "," + longitude + ")" + elevation + "\n";       // skriver det ovenfor. 
+		str = "" +  time + " (" + latitude + "," + longitude + ") " + elevation + "\n";       // skriver det ovenfor. 
 		return str;
 		
 		
