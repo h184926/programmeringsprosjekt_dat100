@@ -56,6 +56,10 @@ public class GPSComputer {
 	}
 
 	public int totalTime() {
+		
+		if(gpspoints.length <2 ) {
+			return 0;
+		}
 
 	    int startTime = gpspoints[0].getTime();
 	    int endTime = gpspoints[gpspoints.length - 1].getTime();
@@ -71,8 +75,14 @@ public class GPSComputer {
 
 	    for (int i = 0; i < gpspoints.length - 1; i++) {
 	        double distance = GPSUtils.distance(gpspoints[i], gpspoints[i + 1]); // Avstand i meter
+	        
 	        int timeDiff = gpspoints[i + 1].getTime() - gpspoints[i].getTime(); // Tidsforskjell i sekunder
-	        speeds[i] = distance / timeDiff; // Hastighet i meter per sekund
+	        
+	        if (timeDiff > 0) {
+	        	speeds[i] = distance / timeDiff; // Hastighet i meter per sekund
+	        } else { 
+	        	speeds[i] = 0;
+	        }
 	    }
 
 	    return speeds;
