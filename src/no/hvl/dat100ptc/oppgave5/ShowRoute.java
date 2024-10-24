@@ -63,7 +63,7 @@ public class ShowRoute extends EasyGraphics {
 
 	public void showRouteMap(int ybase) {
 
-		setColor(0,0,255);
+		setColor(0,255,0);
 		
 		for(int i = 0; i < gpspoints.length -1 ; i++) {
 			int x1 = MARGIN + (int)((gpspoints[i].getLongitude() - minlon) * xstep);
@@ -117,6 +117,7 @@ public class ShowRoute extends EasyGraphics {
 	public void replayRoute(int ybase) {
 
 		setSpeed(10);
+		setColor(0,0,255);
 		
 		int radius = 5; 
 		int circleId = fillCircle(MARGIN, ybase, radius); 
