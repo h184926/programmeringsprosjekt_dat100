@@ -38,12 +38,26 @@ public class ShowSpeed extends EasyGraphics {
 	}
 	
 	public void showSpeedProfile(int ybase) {
+		int x = MARGIN; 
+		double[] speeds = gpscomputer.speeds(); 
+		double averageSpeed = gpscomputer.averageSpeed() * 3.6; //gjennomsnittshastighet
+
+		// Tegner hver hastighet
+		for (int i = 0; i < speeds.length; i++) {
+			int speed = (int) (speeds[i] * 3.6); // Konverter m/s til km/t
+			
+			setColor(0,0,255); // Blå for hastigheter
+			drawLine(x, ybase, x, ybase - speed); // Tegner linje for hastighet
+			
+			x += 2; // 2 i mellom hver hastighet x
+		}
 		
-		int x = MARGIN,y;
-	
-		double[] speeds = gpscomputer.speeds();
-		double avgspeeds = gpscomputer.averageSpeed(); 
+		// Tegner gjennomsnittshastighetslinjen
+		setColor(0,255,0); // Grønn for gjennomsnitt
+		int avgY = ybase - (int) averageSpeed; // Y-posisjon for gjennomsnitt
+		drawLine(MARGIN, avgY, MARGIN + 2 * speeds.length, avgY); // Tegner linje for gjennomsnittshastighet
 		
-		
+		// Sett vindutittelen til å vise gjennomsnittshastigheten
+		setTitle("Gjennomsnittshastigheten: " + String.format("%.2f", averageSpeed) + " km/h"); 
 	}
 }
